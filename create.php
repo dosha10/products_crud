@@ -4,6 +4,11 @@ $pdo = new PDO('mysql:host=localhost;=3306;dbname=products_crud','root','');
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $errors = [];
+
+$title = '';
+$price = '';
+$description = '';
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'];
     $description = $_POST['description'];
@@ -21,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($errors)) {
 
         $statement = $pdo->prepare("INSERT INTO products (title, image, description, price, create_date)
-                                  VALUES (:title, :image, :description, :price, :date)");
+        VALUES (:title, :image, :description, :price, :date)");
         $statement->bindValue(':title', $title);
         $statement->bindValue(':image', '');
         $statement->bindValue(':description', $description);
@@ -76,11 +81,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           type="text"
           class="form-control"
           name="title"
+          value="<?php echo $title ?>" 
         />
       </div><br>
       <div class="form-group">
         <label>Product Description</label>
-        <textarea class="form-control" name="description"></textarea>
+        <textarea class="form-control" name="description"><?php echo $description ?></textarea>
       </div>
       <div class="form-group">
         <label>Product Price</label>
@@ -89,6 +95,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           step=".01"
           class="form-control"
           name="price"
+          value="<?php echo $price ?>"
         />
       </div><br>
       <button type="submit" class="btn btn-primary">Submit</button>
