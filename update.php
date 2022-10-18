@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $imagePath = 'images/'. randomString(8). '/'.$image['name'];
         mkdir(dirname($imagePath));
-        
+
         move_uploaded_file($image['tmp_name'], $imagePath);
 
       }
@@ -114,7 +114,7 @@ function randomString($n) {
 
     <form action="" method="POST" enctype="multipart/form-data">
         <?php if ($product['image']): ?>
-            <img src="<?php echo $product['image'] ?>">
+            <img class="product-img-view" src="<?php echo $product['image'] ?>">
         <?php endif; ?>
 
       <div class="form-group">
