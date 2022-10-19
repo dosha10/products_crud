@@ -1,6 +1,6 @@
-## Products Crud in 3 versions
+## Product Crud
 
-The Codeholic
+A crud application done in three separate versions from The Codeholic.
 
 ## Bad Version (Beginner)
 
