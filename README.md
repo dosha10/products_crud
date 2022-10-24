@@ -17,5 +17,7 @@ Improved product crud: ``code refactoring``
 
 ## Good Version (Best practice)
 
-Introduction to ``NAMESPACES``
-- installing Composer & Autoloading
+Introduction to ``NAMESPACES & COMPOSER``
+- Installing Composer
+- Configuring composer & namespaces
+- Installing dependencies with composer
