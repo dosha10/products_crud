@@ -22,7 +22,7 @@ Introduction to ``NAMESPACES & COMPOSER``
 - Configuring composer & namespaces
 - Installing dependencies with composer
 
-Configuring your own MVC framework with custom routing
+Configuring your own ```MVC``` framework with custom routing
 - MVC Controllers
 - MVC Views
 - MVC Models
