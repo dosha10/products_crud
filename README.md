@@ -10,7 +10,7 @@ Common mistakes beginners make when creating a php crud application;
 
 ## Better Version (Intermediate)
 
-Improved product crud: ``code refactoring``
+Improved product crud: code refactoring
 - Views & partials
 - File structure
 - Database and validate products
