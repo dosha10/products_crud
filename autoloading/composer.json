@@ -1,0 +1,20 @@
+{
+  "name": "frankndungu/product_crud",
+  "authors": [
+    {
+      "name": "dosha10",
+      "email": "ndungufrank01@gmail.com"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "^7.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "app\\": "./app"
+    }
+  },
+  "config": {
+    "platform-check": false
+  }
+}
