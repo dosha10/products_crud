@@ -1,22 +1,33 @@
 <?php
 
 namespace app\controllers;
+
 use app\Router;
 
-class ProductController {
-    public function index() {
-        echo "Index Page";
+class ProductController
+{
+    public function index(Router $router)
+    {
+      $products = $router->db->getProducts();
+      echo "<pre>";
+      var_dump($products);
+      echo "<pre>";
+      $router->renderView('products/index');
+          
     }
 
-    public function create() {
+    public function create()
+    {
         echo "Create Page";
     }
 
-    public function update() {
+    public function update()
+    {
         echo "Update page";
     }
 
-    public function delete() {
+    public function delete()
+    {
         echo "Delete page";
     }
 }

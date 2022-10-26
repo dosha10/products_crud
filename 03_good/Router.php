@@ -6,6 +6,11 @@ class Router
 {
     public array $getRoutes = [];
     public array $postRoutes = [];
+    public Database $db;
+    
+    public function __construct() {
+        $this->db = new Database();
+    }
 
     public function get($url, $fn)
     {
@@ -29,17 +34,17 @@ class Router
         }
 
         if ($fn) {
-            call_user_func($fn);
-            // echo "<pre>";
-            // var_dump($fn);
-            // echo "<pre>";
-
+            call_user_func($fn, $this);
         } else {
             echo "Page not found";
         }
     }
 
-    // public function renderView($view) {
-    //     include_once __DIR__ ."/views/$view.php";
-    // }
+    public function renderView($view) //product/index
+    {
+        ob_start();
+        include_once __DIR__ ."/views/$view.php";
+        $content = ob_get_clean();
+        include_once __DIR__ ."/views/_layout.php";
+    }
 }
