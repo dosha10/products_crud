@@ -7,7 +7,7 @@ class Router
     public array $getRoutes = [];
     public array $postRoutes = [];
     public Database $db;
-    
+
     public function __construct() {
         $this->db = new Database();
     }
@@ -40,8 +40,12 @@ class Router
         }
     }
 
-    public function renderView($view) //product/index
+    public function renderView($view, $params = [])
     {
+        foreach ($params as $key => $value) {
+            $$key  = $value;
+        }
+
         ob_start();
         include_once __DIR__ ."/views/$view.php";
         $content = ob_get_clean();
